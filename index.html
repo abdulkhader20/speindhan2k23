@@ -1,0 +1,435 @@
+<!--
+Theme Name: alive-Responsive-Coming-Soon-Template 
+Author URI: http://webthemez.com/
+Description: alive is a minimal, responsive, business coming soon / landing page / one page HTML5 template based on Bootstrap 3.2.0. This theme is clean and fast, easy to customize multipurpose, includes Services and Contact form, 400+ Font Awesome icons, custom backgrounds and much more!
+-->
+<!doctype html>
+<!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en-gb" class="isie ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!--[if lt IE 9]> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+<title>SPE INDHAN 2K23</title>
+<link href="img/download__1_-removebg-preview.png" rel="icon">
+<meta name="description" content="">
+<meta name="author" content="WebThemez">
+<!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<!--[if lte IE 8]>
+		<script type="text/javascript" src="http://explorercanvas.googlecode.com/svn/trunk/excanvas.js"></script>
+	<![endif]-->
+<link rel="stylesheet" href="css_2/bootstrap.min.css" />
+<link href="css_2/animate.css" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="css_2/styles.css" />
+<link rel="stylesheet" type="text/css" href="css/loader.css" />
+<link href="font/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css_2/bttn.min.css">
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+<script src="js_2/modernizr-latest.js"></script> 
+<script src="js_2/jquery-1.8.2.min.js" type="text/javascript"></script> 
+<script src="js_2/bootstrap.min.js" type="text/javascript"></script> 
+<script src="js_2/jquery.nav.js" type="text/javascript"></script> 
+<script src="js_2/waypoints.js"></script> 
+<script src="js_2/Backstretch.js" type="text/javascript"></script> 
+<!-- <script src="js_2/custom.js" type="text/javascript"></script>  -->
+<script type="text/javascript" src="js_2/jquery.countdown.js"></script>
+</head>
+<script type="text/javascript">
+  /*! Backstretch - v2.0.4 - 2013-06-19
+* http://srobbin.com/jquery-plugins/backstretch/
+* Copyright (c) 2013 Scott Robbin; Licensed MIT */
+(function(a,d,p){a.fn.backstretch=function(c,b){(c===p||0===c.length)&&a.error("No images were supplied for Backstretch");0===a(d).scrollTop()&&d.scrollTo(0,0);return this.each(function(){var d=a(this),g=d.data("backstretch");if(g){if("string"==typeof c&&"function"==typeof g[c]){g[c](b);return}b=a.extend(g.options,b);g.destroy(!0)}g=new q(this,c,b);d.data("backstretch",g)})};a.backstretch=function(c,b){return a("body").backstretch(c,b).data("backstretch")};a.expr[":"].backstretch=function(c){return a(c).data("backstretch")!==p};a.fn.backstretch.defaults={centeredX:!0,centeredY:!0,duration:5E3,fade:0};var r={left:0,top:0,overflow:"hidden",margin:0,padding:0,height:"100%",width:"100%",zIndex:-999999},s={position:"absolute",display:"none",margin:0,padding:0,border:"none",width:"auto",height:"auto",maxHeight:"none",maxWidth:"none",zIndex:-999999},q=function(c,b,e){this.options=a.extend({},a.fn.backstretch.defaults,e||{});this.images=a.isArray(b)?b:[b];a.each(this.images,function(){a("<img />")[0].src=this});this.isBody=c===document.body;this.$container=a(c);this.$root=this.isBody?l?a(d):a(document):this.$container;c=this.$container.children(".backstretch").first();this.$wrap=c.length?c:a('<div class="backstretch"></div>').css(r).appendTo(this.$container);this.isBody||(c=this.$container.css("position"),b=this.$container.css("zIndex"),this.$container.css({position:"static"===c?"relative":c,zIndex:"auto"===b?0:b,background:"none"}),this.$wrap.css({zIndex:-999998}));this.$wrap.css({position:this.isBody&&l?"fixed":"absolute"});this.index=0;this.show(this.index);a(d).on("resize.backstretch",a.proxy(this.resize,this)).on("orientationchange.backstretch",a.proxy(function(){this.isBody&&0===d.pageYOffset&&(d.scrollTo(0,1),this.resize())},this))};q.prototype={resize:function(){try{var a={left:0,top:0},b=this.isBody?this.$root.width():this.$root.innerWidth(),e=b,g=this.isBody?d.innerHeight?d.innerHeight:this.$root.height():this.$root.innerHeight(),j=e/this.$img.data("ratio"),f;j>=g?(f=(j-g)/2,this.options.centeredY&&(a.top="-"+f+"px")):(j=g,e=j*this.$img.data("ratio"),f=(e-b)/2,this.options.centeredX&&(a.left="-"+f+"px"));this.$wrap.css({width:b,height:g}).find("img:not(.deleteable)").css({width:e,height:j}).css(a)}catch(h){}return this},show:function(c){if(!(Math.abs(c)>this.images.length-1)){var b=this,e=b.$wrap.find("img").addClass("deleteable"),d={relatedTarget:b.$container[0]};b.$container.trigger(a.Event("backstretch.before",d),[b,c]);this.index=c;clearInterval(b.interval);b.$img=a("<img />").css(s).bind("load",function(f){var h=this.width||a(f.target).width();f=this.height||a(f.target).height();a(this).data("ratio",h/f);a(this).fadeIn(b.options.speed||b.options.fade,function(){e.remove();b.paused||b.cycle();a(["after","show"]).each(function(){b.$container.trigger(a.Event("backstretch."+this,d),[b,c])})});b.resize()}).appendTo(b.$wrap);b.$img.attr("src",b.images[c]);return b}},next:function(){return this.show(this.index<this.images.length-1?this.index+1:0)},prev:function(){return this.show(0===this.index?this.images.length-1:this.index-1)},pause:function(){this.paused=!0;return this},resume:function(){this.paused=!1;this.next();return this},cycle:function(){1<this.images.length&&(clearInterval(this.interval),this.interval=setInterval(a.proxy(function(){this.paused||this.next()},this),this.options.duration));return this},destroy:function(c){a(d).off("resize.backstretch orientationchange.backstretch");clearInterval(this.interval);c||this.$wrap.remove();this.$container.removeData("backstretch")}};var l,f=navigator.userAgent,m=navigator.platform,e=f.match(/AppleWebKit\/([0-9]+)/),e=!!e&&e[1],h=f.match(/Fennec\/([0-9]+)/),h=!!h&&h[1],n=f.match(/Opera Mobi\/([0-9]+)/),t=!!n&&n[1],k=f.match(/MSIE ([0-9]+)/),k=!!k&&k[1];l=!((-1<m.indexOf("iPhone")||-1<m.indexOf("iPad")||-1<m.indexOf("iPod"))&&e&&534>e||d.operamini&&"[object OperaMini]"==={}.toString.call(d.operamini)||n&&7458>t||-1<f.indexOf("Android")&&e&&533>e||h&&6>h||"palmGetResource"in d&&e&&534>e||-1<f.indexOf("MeeGo")&&-1<f.indexOf("NokiaBrowser/8.5.0")||k&&6>=k)})(jQuery,window); 
+  var info = "hii";
+  $(document).ready(function() {
+    setTimeout(function(){
+    $('body').removeClass('scrolllock');
+    $('#loader-wrapper').fadeOut();
+       }, 3000);
+
+    $('#menu2').click(function () {
+  $path = $('.eventsContainer').offset().top;
+  $('html, body').animate({scrollTop:$path}, 1000);
+  });
+    $('#menu3').click(function () {
+  $path = $('.team').offset().top;
+  $('html, body').animate({scrollTop:$path}, 1000);
+  });
+    $('#menu4').click(function () {
+  $path = $('.sponsors').offset().top;
+  $('html, body').animate({scrollTop:$path}, 1000);
+  });
+    $('#menu5').click(function () {
+  $path = $('footer').offset().top;
+  $('html, body').animate({scrollTop:$path}, 1000);
+  });
+
+    $('.infobgContainer').click(function() {
+      $('.infoContainer').removeClass('infoActive');
+      $('.infobgContainer').removeClass('infoActive');
+      $(info).removeClass('infoActive');
+      $('body').css({
+        overflow : 'auto'
+      });
+    });
+  });
+    function infoReveal(i) {
+    info = i;
+    $('.infoContainer').addClass('infoActive');
+    $('.infobgContainer').addClass('infoActive');
+    $(i).addClass('infoActive');
+    $('body').css({
+      overflow : 'hidden'
+    });
+    }
+    function infoClose(i) {
+    $('.infoContainer').removeClass('infoActive');
+    $(i).removeClass('infoActive');
+    $('.infobgContainer').removeClass('infoActive');
+    $('body').css({
+      overflow : 'auto'
+    });
+    }
+    $( function() {
+        var endDate = "March  25, 2023 15:03:25";
+
+        $('.countdown.simple').countdown({ date: endDate });
+
+        $('.countdown.styled').countdown({
+          date: endDate,
+          render: function(data) {
+            $(this.el).html("<div>" + this.leadingZeros(data.days, 2) + " <span>days</span></div><div>" + this.leadingZeros(data.hours, 2) + " <span>hrs</span></div><div>" + this.leadingZeros(data.min, 2) + " <span>min</span></div><div>" + this.leadingZeros(data.sec, 2) + " <span>sec</span></div>");
+          }
+        });
+
+        $('.countdown.callback').countdown({
+          date: +(new Date) + 10000,
+          render: function(data) {
+            $(this.el).text(this.leadingZeros(data.sec, 2) + " sec");
+          },
+          onEnd: function() {
+            $(this.el).addClass('ended');
+          }
+        }).on("click", function() {
+          $(this).removeClass('ended').data('countdown').update(+(new Date) + 10000).start();
+        });
+		
+		
+		
+      });
+   
+   
+var customScripts = {
+ 
+    onePageNav: function () {
+
+        $('#mainNav').onePageNav({
+            currentClass: 'active',
+            changeHash: false,
+            scrollSpeed: 950,
+            scrollThreshold: 0.2,
+            filter: '',
+            easing: 'swing',
+            begin: function () {
+                //I get fired when the animation is starting
+            },
+            end: function () {
+                   //I get fired when the animation is ending
+				if(!$('#main-nav ul li:first-child').hasClass('active')){
+					$('.header').addClass('addBg');
+				}else{
+						$('.header').removeClass('addBg');
+				}
+				
+            },
+            scrollChange: function ($currentListItem) {
+                //I get fired when you enter a section and I pass the list item of the section
+				if(!$('#main-nav ul li:first-child').hasClass('active')){
+					$('.header').addClass('addBg');
+				}else{
+						$('.header').removeClass('addBg');
+				}
+			}
+        });
+		
+		$("a[href='#top']").click(function () {
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                return false;
+            });
+			$("a[href='#basics']").click(function () {
+                $("html, body").animate({ scrollTop: $('#services').offset().top}, "slow"); 
+                return false;
+            });
+    },   
+	waySlide: function(){
+		  	/* Waypoints Animations
+		   ------------------------------------------------------ */		   			  			
+			$('#services').waypoint(function() {				
+			$('#services .col-md-3').addClass( 'animated fadeInUp show' );   
+			}, { offset: 800}); 
+			$('#aboutUs').waypoint(function() {				
+			$('#aboutUs').addClass( 'animated fadeInUp show' );   
+			}, { offset: 800}); 
+			$('#contactUs').waypoint(function() {				
+			$('#contactUs .parlex-back').addClass( 'animated fadeInUp show' );   
+			}, { offset: 800}); 
+			 						 
+		}, 
+    init: function () {
+        customScripts.onePageNav();  
+		customScripts.waySlide(); 
+    }
+}
+$('document').ready(function () {
+	 $.backstretch([
+      "images_2/background/chemical-pics-1366x770.png"
+,      "images_2/background/gas-pipelines.jpg"
+    , "images_2/background/Oil-Refinery-Chemical-Petrochemical-plant-.jpg"
+    , "images_2/background/SPE Indhan'23 Poster Main-1.png"
+        , "images_2/background/Picsart_23-03-10_17-39-27-813.jpg"
+  ], {duration: 3000, fade: 1250});
+  
+    customScripts.init();
+	$('#services .col-md-3, #features, #aboutUs, #clients, #portfolio, #plans, #contactUs .parlex-back').css('opacity','0');
+	$( "#menuToggle" ).toggle(function() {
+	$(this).find('i').removeClass('fa-bars').addClass('fa-remove');
+	 $('#mainNav').animate({"right":"0px"}, "slow");
+	}, function() {
+	  $('#mainNav').animate({"right":"-200px"}, "slow");
+	  $(this).find('i').removeClass('fa-remove').addClass('fa-bars');
+	});	
+});
+
+
+
+(function() {
+
+(function($) {
+  $.countdown = function(el, options) {
+    var getDateData,
+      _this = this;
+    this.el = el;
+    this.$el = $(el);
+    this.$el.data("countdown", this);
+    this.init = function() {
+      _this.options = $.extend({}, $.countdown.defaultOptions, options);
+      if (_this.options.refresh) {
+        _this.interval = setInterval(function() {
+          return _this.render();
+        }, _this.options.refresh);
+      }
+      _this.render();
+      return _this;
+    };
+    getDateData = function(endDate) {
+      var dateData, diff;
+      endDate = Date.parse($.isPlainObject(_this.options.date) ? _this.options.date : new Date(_this.options.date));
+      diff = (endDate - Date.parse(new Date)) / 1000;
+      if (diff <= 0) {
+        diff = 0;
+        if (_this.interval) {
+          _this.stop();
+        }
+        _this.options.onEnd.apply(_this);
+      }
+      dateData = {
+        years: 0,
+        days: 0,
+        hours: 0,
+        min: 0,
+        sec: 0,
+        millisec: 0
+      };
+      if (diff >= (365.25 * 86400)) {
+        dateData.years = Math.floor(diff / (365.25 * 86400));
+        diff -= dateData.years * 365.25 * 86400;
+      }
+      if (diff >= 86400) {
+        dateData.days = Math.floor(diff / 86400);
+        diff -= dateData.days * 86400;
+      }
+      if (diff >= 3600) {
+        dateData.hours = Math.floor(diff / 3600);
+        diff -= dateData.hours * 3600;
+      }
+      if (diff >= 60) {
+        dateData.min = Math.floor(diff / 60);
+        diff -= dateData.min * 60;
+      }
+      dateData.sec = diff;
+      return dateData;
+    };
+    this.leadingZeros = function(num, length) {
+      if (length == null) {
+        length = 2;
+      }
+      num = String(num);
+      while (num.length < length) {
+        num = "0" + num;
+      }
+      return num;
+    };
+    this.update = function(newDate) {
+      _this.options.date = newDate;
+      return _this;
+    };
+    this.render = function() {
+      _this.options.render.apply(_this, [getDateData(_this.options.date)]);
+      return _this;
+    };
+    this.stop = function() {
+      if (_this.interval) {
+        clearInterval(_this.interval);
+      }
+      _this.interval = null;
+      return _this;
+    };
+    this.start = function(refresh) {
+      if (refresh == null) {
+        refresh = _this.options.refresh || $.countdown.defaultOptions.refresh;
+      }
+      if (_this.interval) {
+        clearInterval(_this.interval);
+      }
+      _this.render();
+      _this.options.refresh = refresh;
+      _this.interval = setInterval(function() {
+        return _this.render();
+      }, _this.options.refresh);
+      return _this;
+    };
+    return this.init();
+  };
+  $.countdown.defaultOptions = {
+    date: "June 7, 2087 15:03:25",
+    refresh: 1000,
+    onEnd: $.noop,
+    render: function(date) {
+      return $(this.el).html("" + date.years + " years, " + date.days + " days, " + (this.leadingZeros(date.hours)) + " hours, " + (this.leadingZeros(date.min)) + " min and " + (this.leadingZeros(date.sec)) + " sec");
+    }
+  };
+  $.fn.countdown = function(options) {
+    return $.each(this, function(i, el) {
+      var $el;
+      $el = $(el);
+      if (!$el.data('countdown')) {
+        return $el.data('countdown', new $.countdown(el, options));
+      }
+    });
+  };
+  return void 0;
+})(jQuery);
+
+}).call(this);
+/*global jQuery */
+/*!
+* FitText.js 1.1
+*
+* Copyright 2011, Dave Rupert http://daverupert.com
+* Released under the WTFPL license
+* http://sam.zoy.org/wtfpl/
+*
+* Date: Thu May 05 14:23:00 2011 -0600
+*/
+
+(function( $ ){
+
+$.fn.fitText = function( kompressor, options ) {
+
+  // Setup options
+  var compressor = kompressor || 1,
+      settings = $.extend({
+        'minFontSize' : Number.NEGATIVE_INFINITY,
+        'maxFontSize' : Number.POSITIVE_INFINITY
+      }, options);
+
+  return this.each(function(){
+
+    // Store the object
+    var $this = $(this);
+
+    // Resizer() resizes items based on the object width divided by the compressor * 10
+    var resizer = function () {
+      $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+    };
+
+    // Call once to set.
+    resizer();
+
+    // Call on resize. Opera debounces their resize by default.
+    $(window).on('resize.fittext orientationchange.fittext', resizer);
+
+  });
+
+};
+
+})( jQuery );
+
+</script>
+<div id="loader-wrapper">
+	<div id="loader-container">
+	<div id="loader">
+	<div id="content"><h2 style="color: black;font-size: inherit;">INDHAN</h2></div>	
+	</div>
+	</div>
+	</div>
+<body>
+<nav id="mainNav">
+  <div id="menuToggle"><i class="fa fa-bars"></i></div>
+  <ul class="menuLinks">
+    <li class="active" id="firstLink"><a href="#home" class="scroll-link">Home</a></li>
+    <li><a href="eventsmain.html" class="scroll-link">Events</a></li>
+    <li><a href="workshop.html" class="scroll-link">Workshops</a></li>
+    <li><a href="games.html" class="scroll-link">Games</a></li>
+	  <li><a href="accomdation.html" class="scroll-link">Accomodation</a></li>
+	  <li><a href="gallery.html" class="scroll-link">Gallery</a></li>
+	  <li><a href="campus.html" class="scroll-link">Campus Ambassador</a></li>
+	  <li><a href="team.html" class="scroll-link">Team SPE INDHAN</a></li>
+	  
+  </ul>
+</nav>
+<!--/.header-->
+<div id="#top"></div>
+<section id="home">
+  <div class="banner-container">
+    <div class="container">
+      <div class="row">
+        <div class="logo"> <img src="images_2/Untitled (Facebook Cover).png" > </div>
+      </div>
+      <script> alert('Registrations are open now,go and register now.'); </script>
+      <div class="heading text-center">
+        <h2>SPE <span>INDHAN</span> 2K23</h2>
+        <h3>Events Starts In:</h3>
+        <div class="countdown styled"></div>
+        <div class="register"><a href="https://linktr.ee/speindhan2K23"><button class="bttn-jelly bttn-lg bttn-primary">&nbsp; REGISTRATION &nbsp; </button></a></div>
+          <h3 class="follow">Follow Us On:</h3>
+          <div class="social-links">
+          <a href="https://www.facebook.com/speindhan2k23?mibextid=ZbWKwL" class="facebook"><i class="fa fa-facebook"></i></a>
+          <a href="https://instagram.com/speindhan2k23?igshid=ZDdkNTZiNTM=" class="instagram"><i class="fa fa-instagram"></i></a>
+          <a href="mailto:speindhan2k23@gmail.com" class="google"><i class="fa fa-envelope"></i></a>
+        </div>
+    <div class="photo">
+          <a href="https://www.fipijntuk.org/"><img src="img/Untitled design (4).png"></a>
+          <div class="spe">
+          <a href="https://spejntuk.org/"><img src="img/Untitled design (3).png"></a>
+      </div>
+      
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<!--[if lte IE 8]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><![endif]--> 
+
+</body>
+</html>
