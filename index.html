@@ -34,6 +34,7 @@
 
   <!-- HERO -->
   <section class="hero">
+    <canvas id="particles-canvas"></canvas>
     <div class="hero-content">
       <div class="hero-badge">25 &amp; 26 March 2023</div>
       <h1>SPE <span>INDHAN</span> 2K23</h1>
@@ -66,7 +67,7 @@
       <h2>About <span>INDHAN</span></h2>
       <div class="section-divider"></div>
     </div>
-    <div style="max-width: 800px; margin: 0 auto; text-align: center; color: var(--text); line-height: 1.9; font-size: 1rem;">
+    <div class="reveal" style="max-width: 800px; margin: 0 auto; text-align: center; color: var(--text); line-height: 1.9; font-size: 1rem;">
       <p>SPE INDHAN 2K23 is a two-day National Technical Symposium organised by the Department of Petroleum and Petrochemical Engineering, University College of Engineering Kakinada (UCEK), JNTUK. It brings together students from across the country to compete, collaborate, and innovate in the fields of petroleum and chemical engineering.</p>
       <br>
       <p>Organised under the banner of the Society of Petroleum Engineers (SPE) Student Chapter, INDHAN 2K23 features technical events, workshops, spot games, and more — all designed to challenge and inspire the next generation of engineers.</p>
@@ -81,7 +82,7 @@
       <p>Everything you need to know about the fest</p>
     </div>
     <div class="cards-grid">
-      <a href="events.html" class="card">
+      <a href="events.html" class="card reveal delay-1">
         <div class="card-icon">🏆</div>
         <div class="card-body">
           <h3>Technical Events</h3>
@@ -89,7 +90,7 @@
           <span class="card-tag">9 Events</span>
         </div>
       </a>
-      <a href="workshop.html" class="card">
+      <a href="workshop.html" class="card reveal delay-2">
         <div class="card-icon">🔬</div>
         <div class="card-body">
           <h3>Workshops</h3>
@@ -97,7 +98,7 @@
           <span class="card-tag">Coming Soon</span>
         </div>
       </a>
-      <a href="games.html" class="card">
+      <a href="games.html" class="card reveal delay-3">
         <div class="card-icon">🎮</div>
         <div class="card-body">
           <h3>Spot Games</h3>
@@ -105,7 +106,7 @@
           <span class="card-tag">6 Games</span>
         </div>
       </a>
-      <a href="accommodation.html" class="card">
+      <a href="accommodation.html" class="card reveal delay-4">
         <div class="card-icon">🏨</div>
         <div class="card-body">
           <h3>Accommodation</h3>
@@ -113,7 +114,7 @@
           <span class="card-tag">Available</span>
         </div>
       </a>
-      <a href="gallery.html" class="card">
+      <a href="gallery.html" class="card reveal delay-5">
         <div class="card-icon">📸</div>
         <div class="card-body">
           <h3>Gallery</h3>
@@ -121,7 +122,7 @@
           <span class="card-tag">Photos</span>
         </div>
       </a>
-      <a href="team.html" class="card">
+      <a href="team.html" class="card reveal delay-6">
         <div class="card-icon">👥</div>
         <div class="card-body">
           <h3>Our Team</h3>
@@ -153,32 +154,108 @@
   </footer>
 
   <script>
+    // ===== NAV TOGGLE =====
     function toggleNav() {
       document.getElementById('navLinks').classList.toggle('open');
     }
-    // Countdown to March 25, 2023
+
+    // ===== NAV SCROLL EFFECT =====
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ===== COUNTDOWN =====
     const eventDate = new Date('March 25, 2023 09:00:00').getTime();
     function updateCountdown() {
-      const now = new Date().getTime();
-      const diff = eventDate - now;
-      if (diff <= 0) {
-        document.getElementById('days').textContent = '00';
-        document.getElementById('hours').textContent = '00';
-        document.getElementById('mins').textContent = '00';
-        document.getElementById('secs').textContent = '00';
-        return;
-      }
-      const d = Math.floor(diff / (1000*60*60*24));
-      const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-      const m = Math.floor((diff % (1000*60*60)) / (1000*60));
-      const s = Math.floor((diff % (1000*60)) / 1000);
-      document.getElementById('days').textContent = String(d).padStart(2,'0');
-      document.getElementById('hours').textContent = String(h).padStart(2,'0');
-      document.getElementById('mins').textContent = String(m).padStart(2,'0');
-      document.getElementById('secs').textContent = String(s).padStart(2,'0');
+      const diff = eventDate - Date.now();
+      const pad = n => String(Math.max(0, Math.floor(n))).padStart(2,'0');
+      document.getElementById('days').textContent  = diff > 0 ? pad(diff/(1000*60*60*24)) : '00';
+      document.getElementById('hours').textContent = diff > 0 ? pad((diff%(1000*60*60*24))/(1000*60*60)) : '00';
+      document.getElementById('mins').textContent  = diff > 0 ? pad((diff%(1000*60*60))/(1000*60)) : '00';
+      document.getElementById('secs').textContent  = diff > 0 ? pad((diff%(1000*60))/1000) : '00';
     }
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
+    // ===== PARTICLES =====
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.4;
+        this.speedY = (Math.random() - 0.5) * 0.4;
+        this.opacity = Math.random() * 0.5 + 0.1;
+        this.color = Math.random() > 0.5 ? '230,126,34' : '243,156,18';
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${this.color},${this.opacity})`;
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < 80; i++) particles.push(new Particle());
+
+    function drawConnections() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 100) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(230,126,34,${0.08 * (1 - dist/100)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => { p.update(); p.draw(); });
+      drawConnections();
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // ===== SCROLL REVEAL =====
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    const dividers = document.querySelectorAll('.section-divider');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealEls.forEach(el => observer.observe(el));
+    dividers.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
