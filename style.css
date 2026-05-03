@@ -1,11 +1,13 @@
 /* ===== SPE INDHAN 2K23 - Global Styles ===== */
 :root {
-  --primary: #e67e22;
-  --dark: #1a1a2e;
-  --darker: #0f0f1a;
-  --light: #f5f5f5;
-  --accent: #f39c12;
-  --text: #ccc;
+  --primary: #f97316;
+  --dark: #0d1b2a;
+  --darker: #060d14;
+  --light: #f0f4ff;
+  --accent: #fb923c;
+  --text: #b8c5d6;
+  --purple: #6c3fc5;
+  --blue: #1e3a5f;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -13,9 +15,11 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Raleway', sans-serif;
-  background-color: var(--darker);
+  background: linear-gradient(160deg, #060d14 0%, #0d1b2a 40%, #0f1729 70%, #0a0f1e 100%);
+  background-attachment: fixed;
   color: var(--light);
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* ===== SCROLL REVEAL ===== */
@@ -69,10 +73,10 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  background: rgba(15, 15, 26, 0.85);
+  background: rgba(6, 13, 20, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(230, 126, 34, 0.2);
+  border-bottom: 1px solid rgba(108, 63, 197, 0.2);
   padding: 0 2rem;
   display: flex;
   align-items: center;
@@ -81,8 +85,8 @@ nav {
   transition: background 0.3s, box-shadow 0.3s;
 }
 nav.scrolled {
-  background: rgba(15, 15, 26, 0.98);
-  box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+  background: rgba(6, 13, 20, 0.98);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.5), 0 1px 0 rgba(108,63,197,0.2);
 }
 
 .nav-brand {
@@ -161,7 +165,11 @@ nav.scrolled {
 /* ===== HERO ===== */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(108,63,197,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(249,115,22,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(30,58,95,0.3) 0%, transparent 60%),
+    linear-gradient(135deg, #060d14 0%, #0d1b2a 50%, #0f1729 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,7 +184,7 @@ nav.scrolled {
   content: '';
   position: absolute;
   width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(230,126,34,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(108,63,197,0.15) 0%, rgba(249,115,22,0.08) 40%, transparent 70%);
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -186,7 +194,7 @@ nav.scrolled {
   content: '';
   position: absolute;
   width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(243,156,18,0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(249,115,22,0.1) 0%, transparent 70%);
   top: 20%; right: 10%;
   pointer-events: none;
   animation: floatOrb 6s ease-in-out infinite;
@@ -435,8 +443,8 @@ section { padding: 5rem 2rem; }
   margin: 0 auto;
 }
 .card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
+  background: linear-gradient(135deg, rgba(13,27,42,0.9), rgba(15,23,41,0.8));
+  border: 1px solid rgba(108,63,197,0.15);
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -449,19 +457,19 @@ section { padding: 5rem 2rem; }
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(230,126,34,0.06), transparent);
+  background: linear-gradient(135deg, rgba(108,63,197,0.08), rgba(249,115,22,0.05));
   opacity: 0;
   transition: opacity 0.3s;
 }
 .card:hover {
   transform: translateY(-8px) scale(1.01);
-  border-color: rgba(230,126,34,0.5);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 0 1px rgba(230,126,34,0.1);
+  border-color: rgba(249,115,22,0.5);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(108,63,197,0.2), 0 0 30px rgba(108,63,197,0.1);
 }
 .card:hover::before { opacity: 1; }
 
 .card-icon {
-  background: linear-gradient(135deg, rgba(230,126,34,0.15), rgba(243,156,18,0.08));
+  background: linear-gradient(135deg, rgba(108,63,197,0.2), rgba(249,115,22,0.1));
   padding: 2rem;
   text-align: center;
   font-size: 3rem;
@@ -496,8 +504,11 @@ section { padding: 5rem 2rem; }
 .page-header {
   padding: 120px 2rem 60px;
   text-align: center;
-  background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
-  border-bottom: 1px solid rgba(230,126,34,0.15);
+  background: 
+    radial-gradient(ellipse at 30% 50%, rgba(108,63,197,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 50%, rgba(249,115,22,0.08) 0%, transparent 60%),
+    linear-gradient(135deg, #060d14, #0d1b2a);
+  border-bottom: 1px solid rgba(249,115,22,0.15);
   position: relative;
   overflow: hidden;
 }
@@ -505,7 +516,7 @@ section { padding: 5rem 2rem; }
   content: '';
   position: absolute;
   width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(230,126,34,0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(108,63,197,0.1) 0%, transparent 70%);
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -615,17 +626,17 @@ section { padding: 5rem 2rem; }
   gap: 1.5rem;
 }
 .team-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
+  background: linear-gradient(135deg, rgba(13,27,42,0.9), rgba(15,23,41,0.8));
+  border: 1px solid rgba(108,63,197,0.12);
   border-radius: 12px;
   padding: 1.5rem 1rem;
   text-align: center;
   transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .team-card:hover {
-  border-color: rgba(230,126,34,0.4);
+  border-color: rgba(249,115,22,0.4);
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 20px rgba(108,63,197,0.1);
 }
 .team-avatar {
   width: 80px; height: 80px;
@@ -685,7 +696,7 @@ section { padding: 5rem 2rem; }
 
 /* ===== FOOTER ===== */
 footer {
-  background: rgba(0,0,0,0.6);
+  background: linear-gradient(135deg, rgba(6,13,20,0.95), rgba(13,27,42,0.95));
   border-top: 1px solid rgba(255,255,255,0.06);
   padding: 3rem 2rem;
   text-align: center;
@@ -697,7 +708,7 @@ footer::before {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  background: linear-gradient(90deg, transparent, var(--purple), var(--primary), transparent);
 }
 footer .footer-brand {
   font-size: 1.5rem;
@@ -753,10 +764,10 @@ footer .footer-links a:hover {
     display: none;
     position: absolute;
     top: 64px; left: 0; right: 0;
-    background: rgba(15,15,26,0.98);
+    background: rgba(6,13,20,0.98);
     flex-direction: column;
     padding: 1rem;
-    border-bottom: 1px solid rgba(230,126,34,0.2);
+    border-bottom: 1px solid rgba(108,63,197,0.2);
     animation: slideDown 0.3s ease;
   }
   @keyframes slideDown {
