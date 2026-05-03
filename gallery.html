@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | SPE INDHAN 2K23</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery-placeholder {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gallery-card {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, rgba(230,126,34,0.1), rgba(26,26,46,0.8));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.3s;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .gallery-card:hover {
+      border-color: rgba(230,126,34,0.4);
+      transform: scale(1.02);
+    }
+    .gallery-card .icon { font-size: 3rem; margin-bottom: 0.8rem; }
+    .gallery-card p { color: var(--text); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-brand">SPE INDHAN</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="workshop.html">Workshops</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="accommodation.html">Accommodation</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="campus.html">Campus Ambassador</a></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page-header">
+    <h1>📸 <span>Gallery</span></h1>
+    <p>Glimpses of JNTUK campus and the Department of Petroleum Engineering</p>
+  </div>
+
+  <section>
+    <div class="gallery-placeholder">
+      <div class="gallery-card">
+        <div class="icon">🏛️</div>
+        <p>JNTUK Main Entrance</p>
+      </div>
+      <div class="gallery-card">
+        <div class="icon">🏫</div>
+        <p>UCEK Campus</p>
+      </div>
+      <div class="gallery-card">
+        <div class="icon">🔬</div>
+        <p>Petroleum Engineering Lab</p>
+      </div>
+      <div class="gallery-card">
+        <div class="icon">🛢️</div>
+        <p>Drilling Lab</p>
+      </div>
+      <div class="gallery-card">
+        <div class="icon">⚗️</div>
+        <p>Chemical Engineering Lab</p>
+      </div>
+      <div class="gallery-card">
+        <div class="icon">🎓</div>
+        <p>Department Building</p>
+      </div>
+      <div class="gallery-card">
+        <div class="icon">🌿</div>
+        <p>Campus Grounds</p>
+      </div>
+      <div class="gallery-card">
+        <div class="icon">📚</div>
+        <p>Central Library</p>
+      </div>
+      <div class="gallery-card">
+        <div class="icon">🏆</div>
+        <p>Previous INDHAN Events</p>
+      </div>
+      <div class="gallery-card">
+        <div class="icon">👥</div>
+        <p>Student Activities</p>
+      </div>
+      <div class="gallery-card">
+        <div class="icon">🎪</div>
+        <p>Fest Highlights</p>
+      </div>
+      <div class="gallery-card">
+        <div class="icon">🌅</div>
+        <p>Campus Views</p>
+      </div>
+    </div>
+    <p style="text-align:center; color: var(--text); margin-top: 2rem; font-size: 0.9rem;">
+      📌 Event photos will be uploaded after the fest. Follow us on 
+      <a href="https://instagram.com/speindhan2k23" target="_blank" style="color: var(--primary);">Instagram</a> for live updates!
+    </p>
+  </section>
+
+  <footer>
+    <div class="footer-brand">SPE INDHAN 2K23</div>
+    <p>Dept. of Petroleum &amp; Petrochemical Engineering · UCEK, JNTUK Kakinada</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="team.html">Team</a>
+      <a href="mailto:speindhan2k23@gmail.com">Contact</a>
+    </div>
+    <p style="margin-top:1.5rem; font-size:0.75rem;">© 2023 SPE INDHAN. All rights reserved.</p>
+  </footer>
+  <script>function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}</script>
+</body>
+</html>
